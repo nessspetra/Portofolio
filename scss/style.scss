@@ -55,6 +55,41 @@ body::before {
   from { transform: translateY(0); }
   to { transform: translateY(-200px); }
 }
+// ===========================
+// ANIMASI FADE-IN
+// ===========================
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+// kasih delay berbeda biar muncul bertahap
+.hero .intro   { @extend .fade-in; animation-delay: 0.2s; }
+.hero .name    { @extend .fade-in; animation-delay: 0.4s; }
+.hero .tagline { @extend .fade-in; animation-delay: 0.6s; }
+.hero img      { @extend .fade-in; animation-delay: 0.8s; }
+.hero .contact a { 
+  @extend .fade-in; 
+  animation-delay: 1s; 
+}
+
+// untuk tiap section title + card
+.section h2 { @extend .fade-in; animation-delay: 0.2s; }
+.section .card {
+  @extend .fade-in;
+  animation-delay: 0.4s;
+}
 
 // ===========================
 // HEADER
