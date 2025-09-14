@@ -5,7 +5,7 @@
 // ===========================
 $primary: #0a0a23;
 $secondary: #4f9cf9;
-$accent: #1e40af;
+$accent: #1e40af; // biru gelap
 $dark: #0b0c10;
 $light: #f8f9fa;
 $text-muted: #94a3b8;
@@ -54,41 +54,6 @@ body::before {
 @keyframes twinkle {
   from { transform: translateY(0); }
   to { transform: translateY(-200px); }
-}
-// ===========================
-// ANIMASI FADE-IN
-// ===========================
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in {
-  opacity: 0;
-  animation: fadeInUp 1s ease forwards;
-}
-
-// kasih delay berbeda biar muncul bertahap
-.hero .intro   { @extend .fade-in; animation-delay: 0.2s; }
-.hero .name    { @extend .fade-in; animation-delay: 0.4s; }
-.hero .tagline { @extend .fade-in; animation-delay: 0.6s; }
-.hero img      { @extend .fade-in; animation-delay: 0.8s; }
-.hero .contact a { 
-  @extend .fade-in; 
-  animation-delay: 1s; 
-}
-
-// untuk tiap section title + card
-.section h2 { @extend .fade-in; animation-delay: 0.2s; }
-.section .card {
-  @extend .fade-in;
-  animation-delay: 0.4s;
 }
 
 // ===========================
@@ -154,67 +119,6 @@ body::before {
         }
       }
     }
-  }
-}
-
-// ===========================
-// HAMBURGER MENU
-// ===========================
-.menu-toggle {
-  display: none;
-}
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-
-  span {
-    width: 28px;
-    height: 3px;
-    background: $secondary;
-    border-radius: 5px;
-    transition: 0.3s;
-  }
-}
-
-@media (max-width: 768px) {
-  .header-content {
-    nav {
-      position: absolute;
-      top: 70px;
-      left: 0;
-      right: 0;
-      background: rgba(10, 10, 35, 0.95);
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      padding: 1.5rem 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-in-out;
-    }
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  // toggle menu show
-  .menu-toggle:checked ~ nav {
-    max-height: 300px;
-  }
-
-  // animasi icon jadi X
-  .menu-toggle:checked + .hamburger span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  .menu-toggle:checked + .hamburger span:nth-child(2) {
-    opacity: 0;
-  }
-  .menu-toggle:checked + .hamburger span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
   }
 }
 
